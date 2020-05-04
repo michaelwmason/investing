@@ -1,0 +1,19 @@
+<table mat-table [dataSource]="stocks" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="ticker">
+    <th mat-header-cell *matHeaderCellDef>Ticker</th>
+    <td mat-cell (click)="navigate(element)" *matCellDef="let element">
+      {{ element.ticker }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell (click)="navigate(element)" *matCellDef="let element">
+      {{ element.name }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
