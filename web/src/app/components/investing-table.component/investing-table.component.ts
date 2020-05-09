@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { Stock } from 'src/app/models/stock'
 import { Router } from '@angular/router'
+import { StockService } from 'src/app/services/stock.service'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-investing-table',
@@ -8,14 +10,14 @@ import { Router } from '@angular/router'
   styleUrls: ['./investing-table.component.css']
 })
 export class InvestingTableComponent implements OnInit {
-  stocks: Stock[] = [
-    { ticker: 'FOO', name: 'Foo Company', id: '1' },
-    { ticker: 'BAR', name: 'BAR Company', id: '2' }
-  ]
+  stocks$: Observable<Stock[]>
   displayedColumns = ['ticker', 'name']
-  constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  constructor(private router: Router, private stockService: StockService) {}
+
+  ngOnInit(): void {
+    this.stocks$ = this.stockService.all()
+  }
 
   navigate(row: Stock): void {
     this.router.navigate([`stock/${row.ticker}`])
