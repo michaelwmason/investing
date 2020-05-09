@@ -5,14 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module'
 import { StartupComponent } from '../components/startup.component/startup.component'
 import { AppComponent } from '../components/app.component/app.component'
-import { InvestingTableComponent } from '../components/investing-table.component/investing-table.component'
+import { WatchlistTableComponent } from '../components/investing-table.component/watchlist-table.component'
 import { MatTableModule } from '@angular/material/table'
 import { HttpClientModule } from '@angular/common/http'
 import { StockService } from '../services/stock.service'
 import { CommonModule } from '@angular/common'
 
 @NgModule({
-  declarations: [AppComponent, StartupComponent, InvestingTableComponent],
+  declarations: [AppComponent, StartupComponent, WatchlistTableComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

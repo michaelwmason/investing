@@ -1,24 +1,36 @@
-import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { Stock } from '../models/stock'
-import { Observable, of } from 'rxjs'
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { StockInformation } from '../models/stock';
+import { Observable, of } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class StockService {
   constructor(private http: HttpClient) {}
 
-  all(): Observable<Stock[]> {
-    return of([mockStock, mockStock2])
+  all(): Observable<StockInformation[]> {
+    return of([mockStock, mockStock2]);
   }
 
-  findByTicker(ticker: string): Observable<Stock> {
-    return of([mockStock, mockStock2].find(stock => stock.ticker === ticker))
+  getQuoteInfo(symbol: string): Observable<StockInformation> {
+    return this.http
+      .get(
+        'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo'
+      )
+      .pipe(
+        map((obj) => new StockInformation(obj)),
+        tap(console.log)
+      );
   }
 }
 
-export const mockStock: Stock = { id: '1', ticker: 'TST', name: 'Test Company' }
-export const mockStock2: Stock = {
-  id: '2',
-  ticker: 'MCK',
-  name: 'Mock Company'
-}
+export const mockStock: StockInformation = {
+  symbol: 'TST',
+
+  currentPrice: '100',
+} as StockInformation;
+export const mockStock2: StockInformation = {
+  symbol: 'MCK',
+
+  currentPrice: '100',
+} as StockInformation;

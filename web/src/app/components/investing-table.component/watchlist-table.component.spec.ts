@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InvestingTableComponent } from './investing-table.component';
+import { InvestingTableComponent } from './watchlist-table.component';
 
 describe('InvestingTableComponent', () => {
   let component: InvestingTableComponent;

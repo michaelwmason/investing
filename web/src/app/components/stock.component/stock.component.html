@@ -1,0 +1,7 @@
+<p>Ticker : {{ (stock$ | async).symbol }}</p>
+<p>Current Price: {{ (stock$ | async).currentPrice }}</p>
+<p>Open: {{ (stock$ | async).open }}</p>
+<p>Day High: {{ (stock$ | async).high }}</p>
+<p>Day Low: {{ (stock$ | async).low }}</p>
+<p>Day Change: {{ (stock$ | async).change }}</p>
+<p>Percent Day Change: {{ (stock$ | async).percentChange }}</p>
