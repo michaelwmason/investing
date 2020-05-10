@@ -3,18 +3,19 @@ package com.investing.api.models;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
-@EqualsAndHashCode
-public class InvestingUser {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+@EqualsAndHashCode(callSuper = true)
+public class InvestingUser extends StoredClass {
     private String firstName;
     private String lastName;
+    private String userName;
+
+    @OneToMany
+    @JoinColumn(name = "id")
+    private List<Watchlist> watchlists;
+
 }
