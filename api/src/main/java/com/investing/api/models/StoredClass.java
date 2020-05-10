@@ -9,13 +9,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.time.ZonedDateTime;
+import java.util.UUID;
 
 @Getter
 @MappedSuperclass
 public abstract class StoredClass {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+    private UUID id;
 
     @CreationTimestamp
     private ZonedDateTime createdDate;

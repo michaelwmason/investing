@@ -1,4 +1,4 @@
 FROM openjdk:14-jdk-slim
-ARG JAR_FILE=target/*.jar
+EXPOSE 8080
 COPY build/libs/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]

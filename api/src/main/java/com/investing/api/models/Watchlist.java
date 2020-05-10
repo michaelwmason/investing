@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Getter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
 public class Watchlist extends StoredClass{
 
     @OneToOne

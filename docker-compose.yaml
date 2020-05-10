@@ -5,12 +5,12 @@ services:
       context: ./api
       dockerfile: ./api/Dockerfile
     image: investing-api:latest
-    expose:
-      - "8080"
+    ports:
+      - "8080:8080"
   postgres:
     image: postgres:11.3-alpine
     volumes:
-            - postgresData:/var/lib/postgresql/data
+      - postgresData:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     environment:
