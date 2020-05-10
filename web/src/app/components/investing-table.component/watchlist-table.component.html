@@ -1,8 +1,8 @@
 <table mat-table [dataSource]="stocks$ | async" class="mat-elevation-z8">
-  <ng-container matColumnDef="ticker">
-    <th mat-header-cell *matHeaderCellDef>Ticker</th>
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef>Symbol</th>
     <td mat-cell (click)="navigate(element)" *matCellDef="let element">
-      {{ element.ticker }}
+      {{ element.symbol }}
     </td>
   </ng-container>
   <ng-container matColumnDef="name">

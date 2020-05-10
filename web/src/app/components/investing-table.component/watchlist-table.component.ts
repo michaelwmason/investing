@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class WatchlistTableComponent implements OnInit {
   stocks$: Observable<StockInformation[]>;
-  displayedColumns = ['ticker', 'name'];
+  displayedColumns = ['symbol', 'name'];
 
   constructor(private router: Router, private stockService: StockService) {}
 

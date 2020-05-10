@@ -20,7 +20,6 @@ export class StockComponent implements OnInit {
 
   ngOnInit(): void {
     this.ticker = this.activatedRoute.snapshot.params.ticker;
-    this.stock$ = this.stockService.getQuoteInfo(this.ticker);
+    // this.stock$ = this.stockService.getQuoteInfo(this.ticker);
   }
-
 }

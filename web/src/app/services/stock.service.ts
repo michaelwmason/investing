@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { StockInformation } from '../models/stock';
 import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class StockService {
@@ -15,7 +16,7 @@ export class StockService {
   getQuoteInfo(symbol: string): Observable<StockInformation> {
     return this.http
       .get(
-        'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo'
+        `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${environment.apikey}`
       )
       .pipe(
         map((obj) => new StockInformation(obj)),
@@ -25,12 +26,12 @@ export class StockService {
 }
 
 export const mockStock: StockInformation = {
-  symbol: 'TST',
+  symbol: 'IBM',
 
   currentPrice: '100',
 } as StockInformation;
 export const mockStock2: StockInformation = {
-  symbol: 'MCK',
+  symbol: 'AAPL',
 
   currentPrice: '100',
 } as StockInformation;

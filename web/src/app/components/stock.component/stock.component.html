@@ -1,7 +1,42 @@
-<p>Ticker : {{ (stock$ | async).symbol }}</p>
-<p>Current Price: {{ (stock$ | async).currentPrice }}</p>
-<p>Open: {{ (stock$ | async).open }}</p>
-<p>Day High: {{ (stock$ | async).high }}</p>
-<p>Day Low: {{ (stock$ | async).low }}</p>
-<p>Day Change: {{ (stock$ | async).change }}</p>
-<p>Percent Day Change: {{ (stock$ | async).percentChange }}</p>
+<table *ngIf="stock$ | async as stock" style="width: 20rem;">
+  <tr>
+    <td>Ticker</td>
+    <td>{{ stock.symbol }}</td>
+  </tr>
+  <tr>
+    <td>Current Price</td>
+    <td>{{ stock.currentPrice }}</td>
+  </tr>
+  <tr>
+    <td>Open</td>
+    <td>{{ stock.open }}</td>
+  </tr>
+  <tr>
+    <td>Day High</td>
+    <td>{{ stock.high }}</td>
+  </tr>
+  <tr>
+    <td>Day Low</td>
+    <td>{{ stock.low }}</td>
+  </tr>
+  <tr>
+    <td>Day Change</td>
+    <td>{{ stock.change }}</td>
+  </tr>
+  <tr>
+    <td>Percent Day Change</td>
+    <td>{{ stock.percentChange }}</td>
+  </tr>
+</table>
+<a href="https://finance.yahoo.com/quote/AAPL?p=AAPL">apple yahoo</a>
+
+<table style="width: 20rem;">
+  <tr>
+    <th>Category</th>
+    <th>Comments</th>
+  </tr>
+  <tr>
+    <td>Management</td>
+    <td>is gud</td>
+  </tr>
+</table>
