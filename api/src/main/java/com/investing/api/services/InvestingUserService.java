@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface InvestingUserService {
     List<InvestingUser> all();
+    InvestingUser login(String username);
 }

@@ -20,4 +20,8 @@ public class InvestingUserServiceImpl implements InvestingUserService {
         return investingUserDao.findAll();
     }
 
+    public InvestingUser login(String username) {
+        return investingUserDao.findByUsername(username).orElseThrow(RuntimeException::new);
+    }
+
 }
