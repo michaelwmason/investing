@@ -2,10 +2,10 @@
   <mat-card>
     <mat-label class="center">Login</mat-label>
     <mat-form-field appearance="outline">
-      <input matInput />
+      <input matInput [formControl]="username" />
     </mat-form-field>
     <div class="center">
-      <button mat-raised-button color="primary" (click)="login('a')">
+      <button mat-raised-button color="primary" (click)="login()">
         Submit
       </button>
     </div>

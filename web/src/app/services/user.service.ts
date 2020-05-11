@@ -13,7 +13,7 @@ export class UserService {
 
   login(username: string): Observable<InvestingUser> {
     return this.httpClient
-      .get<InvestingUser>(`${environment.baseEndpoint}/user/${username}`)
+      .get<InvestingUser>(`${environment.baseEndpoint}/user/login/${username}`)
       .pipe(tap((user) => this.currentUser$.next(user)));
   }
 }

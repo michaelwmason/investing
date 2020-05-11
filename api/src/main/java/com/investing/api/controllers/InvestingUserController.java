@@ -2,10 +2,7 @@ package com.investing.api.controllers;
 
 import com.investing.api.models.InvestingUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.investing.api.services.InvestingUserService;
 
 import javax.validation.constraints.NotNull;
@@ -26,8 +23,8 @@ public class InvestingUserController {
         return investingUserService.all();
     }
 
-    @GetMapping(value = "login")
-    public InvestingUser login(@RequestBody @NotNull String username) {
+    @GetMapping(value = "/login/{username}")
+    public InvestingUser login(@PathVariable @NotNull String username) {
         return investingUserService.login(username);
     }
 }
