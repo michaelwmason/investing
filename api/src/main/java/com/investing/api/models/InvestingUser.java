@@ -1,5 +1,6 @@
 package com.investing.api.models;
 
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -9,6 +10,7 @@ import java.util.List;
 @Entity
 @Getter
 @EqualsAndHashCode(callSuper = true)
+@AllArgsConstructor
 public class InvestingUser extends StoredClass {
     private String firstName;
     private String lastName;

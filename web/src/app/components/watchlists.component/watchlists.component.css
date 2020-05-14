@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+th {
+  width: 50%;
+}
+
+.mat-row:hover {
+  cursor: pointer;
+}

@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { StartupComponent } from '../components/startup.component/startup.component';
 import { AppComponent } from '../components/app.component/app.component';
-import { WatchlistTableComponent } from '../components/investing-table.component/watchlist-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { StockService } from '../services/stock.service';
@@ -17,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WatchlistTableComponent } from '../components/watchlist-table.component/watchlist-table.component';
 
 @NgModule({
   declarations: [

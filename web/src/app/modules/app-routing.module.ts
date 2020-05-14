@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WatchlistTableComponent } from '../components/investing-table.component/watchlist-table.component';
+import { WatchlistTableComponent } from '../components/watchlist-table.component/watchlist-table.component';
 import { StartupComponent } from '../components/startup.component/startup.component';
 import { LoginComponent } from '../components/login.component/login.component';
 

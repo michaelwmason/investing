@@ -21,13 +21,13 @@ export class StockInformation {
 
 export class StockNotes {
   id: string;
+  createdDate: Date;
+  updatedDate: Date;
   ticker: string;
   notes: Note[];
-  '01 big a': string;
 }
 
 export class Note {
-  id: string;
   title: string;
   content: string;
 }
