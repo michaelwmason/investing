@@ -1,8 +1,8 @@
-import { InvestingUser } from './investing-user';
+import { InvestingUserDto } from './investing-user';
 
-export class Watchlist {
+export class WatchlistDto {
   id: string;
   createdDate: Date;
   updatedDate: Date;
-  investingUser: InvestingUser;
+  symbols: string[];
 }

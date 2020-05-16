@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { BehaviorSubject } from 'rxjs';
-import { InvestingUser } from 'src/app/models/investing-user';
+import { InvestingUserDto } from 'src/app/models/investing-user';
 import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({

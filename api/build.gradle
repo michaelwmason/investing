@@ -23,6 +23,7 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.2.7.RELEASE'
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
 	compile group:'com.vladmihalcea', name: 'hibernate-types-52', version: '2.1.1'
+	compile "org.flywaydb:flyway-core:6.4.2"
 	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.7.RELEASE'
 
 

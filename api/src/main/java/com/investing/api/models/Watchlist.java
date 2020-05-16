@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
-public class Watchlist extends StoredClass{
+public class Watchlist extends StoredClass {
 
     @OneToOne
     private InvestingUser investingUser;
