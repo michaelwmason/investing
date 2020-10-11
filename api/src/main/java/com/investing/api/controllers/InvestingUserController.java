@@ -25,6 +25,7 @@ public class InvestingUserController {
 
     @GetMapping(value = "/login/{username}")
     public InvestingUser login(@PathVariable @NotNull String username) {
+        System.out.print("logging in");
         return investingUserService.login(username);
     }
 }

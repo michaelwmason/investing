@@ -8,7 +8,7 @@ apply plugin: 'java'
 
 group = 'com.investing'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '14'
+sourceCompatibility = '10'
 
 repositories {
 	mavenCentral()
@@ -19,10 +19,7 @@ repositories {
 dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.7.RELEASE'
 	implementation 'org.springframework.boot:spring-boot-devtools'
-	implementation('org.postgresql:postgresql:9.4-1206-jdbc42')
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.2.7.RELEASE'
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
-	compile group:'com.vladmihalcea', name: 'hibernate-types-52', version: '2.1.1'
 	compile "org.flywaydb:flyway-core:6.4.2"
 	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.7.RELEASE'
 

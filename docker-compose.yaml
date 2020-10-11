@@ -1,24 +1,39 @@
 version: "3"
 services:
+  web:
+    container_name: web
+    # build:
+    #   context: ./web
+    #   dockerfile: ./web/Dockerfile
+    image: investing-web:latest
+    networks:
+      - investing-network
+    ports:
+      - "4200:80"
   api:
     container_name: api
-    build:
-      context: ./api
-      dockerfile: ./api/Dockerfile
+    # build:
+    #   context: ./api
+    #   dockerfile: ./api/Dockerfile
     image: investing-api:latest
+    networks:
+      - investing-network
     ports:
       - "8080:8080"
-  postgres:
-    container_name: db
-    image: postgres:11.3-alpine
-    volumes:
-      - postgresData:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_USER: postgres
-      POSTGRES_DB: db
-      PGDATA: /var/lib/postgresql/data/pgdata
-volumes:
-  postgresData:
+networks:
+  investing-network:
+    driver: "bridge"
+#   postgres:
+#     container_name: db
+#     image: postgres:11.3-alpine
+#     volumes:
+#       - postgresData:/var/lib/postgresql/data
+#     ports:
+#       - "5432:5432"
+#     environment:
+#       POSTGRES_PASSWORD: password
+#       POSTGRES_USER: postgres
+#       POSTGRES_DB: db
+#       PGDATA: /var/lib/postgresql/data/pgdata
+# volumes:
+#   postgresData:

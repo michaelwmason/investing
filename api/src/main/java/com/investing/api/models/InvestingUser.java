@@ -5,10 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.util.List;
 
-@Entity
 @Getter
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
@@ -18,8 +16,6 @@ public class InvestingUser extends StoredClass {
     private String lastName;
     private String username;
 
-    @OneToMany
-    @JoinColumn(name = "id")
     private List<Watchlist> watchlists;
 
 }

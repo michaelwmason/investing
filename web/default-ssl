@@ -1,0 +1,17 @@
+#upstream api_backend {
+#    server api:8080;
+#}
+
+server {
+    listen 80;
+    root /var/www;
+
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+
+#  location /api/ {
+#      rewrite /api/(.*) /$1
+#      proxy_pass    http://api_backend
+#  }
+}
